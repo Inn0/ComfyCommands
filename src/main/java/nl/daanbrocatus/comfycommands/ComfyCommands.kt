@@ -1,6 +1,7 @@
 package nl.daanbrocatus.comfycommands
 
 import nl.daanbrocatus.comfycommands.commands.*
+import nl.daanbrocatus.comfycommands.listeners.PlayerDeathListener
 import org.bukkit.plugin.java.JavaPlugin
 
 class ComfyCommands : JavaPlugin() {
@@ -14,6 +15,8 @@ class ComfyCommands : JavaPlugin() {
         getCommand("listcoords")?.setExecutor(ListCoords())
         getCommand("deletecoords")?.setExecutor(DeleteCoords())
         getCommand("clearcoords")?.setExecutor(ClearCoords())
+
+        server.pluginManager.registerEvents(PlayerDeathListener(), this)
     }
 
     override fun onDisable() {

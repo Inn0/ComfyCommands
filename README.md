@@ -20,6 +20,9 @@ The following commands can be issued via the chat interface.
 
 For some commands you need admin priviliges within the plugin. These admin priviliges are not the same as being operator on the server.
 
+## Listeners
+1. Whenever a player dies, the coordinates where they died are shown in the chat. 
+
 ## Contact
 Please reach out to [Daan](mailto:daan.brocatus@outlook.com) for suggestions, questions or for reporting bugs. 
 
