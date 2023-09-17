@@ -1,0 +1,14 @@
+name: ComfyCommands
+version: '${project.version}'
+main: nl.daanbrocatus.comfycommands.ComfyCommands
+api-version: '1.20'
+commands:
+  heal:
+    description: Heals a player to full health.
+    usage: /heal
+  coords:
+    description: Fetch the coordinates of a player by name.
+    usage: /coords <username>
+  afk:
+    description: Go AFK and become invincible.
+    usage: /afk
