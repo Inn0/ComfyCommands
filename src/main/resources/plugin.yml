@@ -22,8 +22,8 @@ commands:
     description: Save your current coordinates under a name.
     usage: /savecoords <name>
   listcoords:
-    description: Lists all the coordinates the player has saved
-    usage: /listcoords
+    description: Lists all the coordinates the player has saved. You can provide a username as an argument to get someone else's list.
+    usage: /listcoords <username?>
   deletecoords:
     description: Deletes a set of coordinates.
     usage: /deletecoords <name>
