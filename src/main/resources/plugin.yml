@@ -10,5 +10,23 @@ commands:
     description: Fetch the coordinates of a player by name.
     usage: /coords <username>
   afk:
-    description: Go AFK and become invincible.
+    description: Go AFK and become invincible. AFK players have a yellow name.
     usage: /afk
+  sleep:
+    description: Makes it morning and clears the weather.
+    usage: /sleep
+  announce:
+    description: Make an announcement to everyone on the server.
+    usage: /announce <message>
+  savecoords:
+    description: Save your current coordinates under a name.
+    usage: /savecoords <name>
+  listcoords:
+    description: Lists all the coordinates the player has saved
+    usage: /listcoords
+  deletecoords:
+    description: Deletes a set of coordinates.
+    usage: /deletecoords <name>
+  clearcoords:
+    description: Clears all saved coordinates.
+    usage: /clearcoords

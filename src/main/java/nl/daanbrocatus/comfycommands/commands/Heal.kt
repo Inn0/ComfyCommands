@@ -21,6 +21,7 @@ class Heal : CommandExecutor {
         }
 
         sender.health = 20.0
+        sender.saturation = 20.0f
         sender.sendMessage("${ChatColor.GREEN}$ Healed player health to 20.0.")
         return true
     }

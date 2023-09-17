@@ -11,8 +11,6 @@ import kotlin.math.roundToInt
 
 class Coords: CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, p2: String, args: Array<out String>?): Boolean {
-
-
         if(sender !is Player) {
             sender.sendMessage("${ChatColor.RED}$ Sender needs to be a player!")
             return false
