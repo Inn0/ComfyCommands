@@ -1,6 +1,7 @@
 package nl.daanbrocatus.comfycommands
 
 import nl.daanbrocatus.comfycommands.commands.*
+import nl.daanbrocatus.comfycommands.commands.coords.*
 import nl.daanbrocatus.comfycommands.listeners.PlayerDeathListener
 import org.bukkit.plugin.java.JavaPlugin
 

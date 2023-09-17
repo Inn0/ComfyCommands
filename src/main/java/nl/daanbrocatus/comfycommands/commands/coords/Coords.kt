@@ -1,4 +1,4 @@
-package nl.daanbrocatus.comfycommands.commands
+package nl.daanbrocatus.comfycommands.commands.coords
 
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor

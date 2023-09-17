@@ -1,4 +1,4 @@
-package nl.daanbrocatus.comfycommands.commands
+package nl.daanbrocatus.comfycommands.commands.coords
 
 import nl.daanbrocatus.comfycommands.utils.CoordUtil
 import org.bukkit.Bukkit
