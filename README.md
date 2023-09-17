@@ -10,6 +10,7 @@ The following commands can be issued via the chat interface.
 |---------------|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|-------|-------------------------------------------|
 | /afk          |                           | Toggle AFK mode. When AFK a player is unable to move or jump, but is invulnerable. Their name also turns yellow in the player list and in the chat. | no    | /afk                                      |
 | /sleep        |                           | Sets the in-game time to morning and clears the weather.                                                                                            | no    | /sleep                                    |
+| /coords       | Name: String              | Gets the current coordinates of a player.                                                                                                           | no    | /coords DatAsianPesuasio                  |
 | /announce     | Message: String           | Send a message to all players using the server. The text shows up with the dollar sign prefix and in a blue color.                                  | yes   | /announce This is an announcement.        |
 | /heal         |                           | Heals the user/issuer to full health and saturation.                                                                                                | yes   | /heal                                     |
 | /savecoords   | Name: String              | Saves the current coordinates of the user/issuer. Names have to be unique per player. Coordinates do not have to be unique.                         | no    | /savecoords portal                        |
@@ -21,3 +22,5 @@ For some commands you need admin priviliges within the plugin. These admin privi
 
 ## Contact
 Please reach out to [Daan](mailto:daan.brocatus@outlook.com) for suggestions, questions or for reporting bugs. 
+
+Assigning admin priviliges to users is not yet implemented. 
