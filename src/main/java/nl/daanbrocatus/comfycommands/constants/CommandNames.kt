@@ -13,5 +13,7 @@ data class CommandNames(
         val GIVEPERMS: String = "giveperms",
         val REVOKEPERMS: String = "revokeperms",
         val LISTPERMS: String = "listperms",
-        val ENDERCHEST: String = "ec"
+        val ENDERCHEST: String = "ec",
+        val ADDGMMSG: String = "addgmmsg",
+        val REMOVEGMMSG: String = "removegmmsg"
 )

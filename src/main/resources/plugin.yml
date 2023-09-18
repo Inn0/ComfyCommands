@@ -42,3 +42,9 @@ commands:
   ec:
     description: Opens a player's enderchest.
     usage: /ec
+  addgmmsg:
+    description: Adds a message to the randomly selected message that is echoed after using /sleep.
+    usage: /addgmmsg <message>
+  removegmmsg:
+    description: Removes a message from the randomly selected message that is echoed after using /sleep.
+    usage: /removegmmsg <message>

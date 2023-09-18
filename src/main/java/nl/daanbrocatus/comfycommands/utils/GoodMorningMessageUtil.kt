@@ -22,6 +22,20 @@ class GoodMorningMessageUtil {
         return strings[randomIndex]
     }
 
+    fun addMessage(string: String) {
+        var msgList = readMessages().toMutableList()
+        msgList.add(string)
+        file.writeText(gson.toJson(msgList))
+    }
+
+    fun removeMessage(string: String) {
+        var msgList = readMessages().toMutableList()
+        if(msgList.contains(string)) {
+            msgList.remove(string)
+            file.writeText(gson.toJson(msgList))
+        }
+    }
+
     private fun readMessages(): List<String> {
         val json = file.readText()
         val type = object : TypeToken<List<String>>() {}.type

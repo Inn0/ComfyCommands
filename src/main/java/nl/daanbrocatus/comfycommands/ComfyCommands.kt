@@ -1,6 +1,8 @@
 package nl.daanbrocatus.comfycommands
 
 import nl.daanbrocatus.comfycommands.commands.*
+import nl.daanbrocatus.comfycommands.commands.GMMessages.AddGMMsg
+import nl.daanbrocatus.comfycommands.commands.GMMessages.RemoveGMMsg
 import nl.daanbrocatus.comfycommands.commands.coords.*
 import nl.daanbrocatus.comfycommands.commands.perms.ClearPerms
 import nl.daanbrocatus.comfycommands.commands.perms.GivePerms
@@ -36,6 +38,10 @@ class ComfyCommands : JavaPlugin() {
         getCommand(CommandNames().REVOKEPERMS)?.setExecutor(RevokePerms())
         getCommand(CommandNames().GIVEPERMS)?.setExecutor(GivePerms())
         getCommand(CommandNames().CLEARPERMS)?.setExecutor(ClearPerms())
+
+        // Good morning message command executors
+        getCommand(CommandNames().ADDGMMSG)?.setExecutor(AddGMMsg())
+        getCommand(CommandNames().REMOVEGMMSG)?.setExecutor(RemoveGMMsg())
 
         // Event listeners
         server.pluginManager.registerEvents(PlayerDeathListener(), this)

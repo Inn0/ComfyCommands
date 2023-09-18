@@ -21,6 +21,8 @@ The following commands can be issued via the chat interface. You need permission
 | /revokeperms  | Name: String, Command: String | Revokes a user's permission to use a command.                                                                                                       | no                 | /revokeperms DatAsianPesuasio heal        |
 | /clearperms   | Name: String                  | Revokes all of a user's permission to use any ComfyCommands command.                                                                                | no                 | /clearperms DatAsianPesuasio              |
 | /ec           |                               | Opens a player's enderchest.                                                                                                                        | no                 | /ec                                       |
+| /addgmmsg     | Message: String               | Adds a message to the randomly selected message that is echoed after using /sleep.                                                                  | no                 | /addgmmsg good morning!                   |
+| /removegmmsg  | Message: String               | Removes a message from the randomly selected message that is echoed after using /sleep.                                                             | no                 | /removegmmsg good morning!                |
 
 Having operator priviliges on a Minecraft server does not equal having permission to use all the ComfyCommands commands. Permission needs to be granted seperately, using the ```/giveperms <userName> <commandName>```.
 
