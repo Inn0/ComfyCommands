@@ -42,10 +42,15 @@ class PlayerJoinListener: Listener {
         }
 
         val coordsString = " $coordColor(${player.location.x.roundToInt()}, ${player.location.y.roundToInt()}, ${player.location.z.roundToInt()})"
-        if(player.playerListName.length > coordsString.length) {
-            player.setPlayerListName(player.playerListName.substring(0, player.playerListName.length - coordsString.length))
-        }
+        val cleanPlayerDisplayName = removeParentheses(player.displayName)
+        println("Cleaned display name: $cleanPlayerDisplayName")
+        val newPlayerDisplayName = cleanPlayerDisplayName.plus(coordsString)
+        println("Displayname with coords: $newPlayerDisplayName")
 
-        player.setPlayerListName(player.playerListName.plus(coordsString))
+        player.setPlayerListName(newPlayerDisplayName)
+    }
+
+    private fun removeParentheses(input: String): String {
+        return input.replace(Regex("\\(.*?\\)"), "")
     }
 }
