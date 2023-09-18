@@ -22,7 +22,7 @@ The following commands can be issued via the chat interface. You need permission
 | /clearperms   | Name: String                  | Revokes all of a user's permission to use any ComfyCommands command.                                                                                | no                 | /clearperms DatAsianPesuasio              |
 | /ec           |                               | Opens a player's enderchest.                                                                                                                        | no                 | /ec                                       |
 
-For some commands you need admin priviliges within the plugin. These admin priviliges are not the same as being operator on the server.
+Having operator priviliges on a Minecraft server does not equal having permission to use all the ComfyCommands commands. Permission needs to be granted seperately, using the ```/giveperms <userName> <commandName>```.
 
 ## Listeners
 1. Whenever a player dies, the coordinates where they died are shown in the chat. 
