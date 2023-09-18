@@ -20,6 +20,7 @@ The following commands can be issued via the chat interface. You need permission
 | /giveperms    | Name: String, Command: String | Gives a user permission to use a command.                                                                                                           | no                 | /giveperms DatAsianPesuasio heal          |
 | /revokeperms  | Name: String, Command: String | Revokes a user's permission to use a command.                                                                                                       | no                 | /revokeperms DatAsianPesuasio heal        |
 | /clearperms   | Name: String                  | Revokes all of a user's permission to use any ComfyCommands command.                                                                                | no                 | /clearperms DatAsianPesuasio              |
+| /ec           |                               | Opens a player's enderchest.                                                                                                                        | no                 | /ec                                       |
 
 For some commands you need admin priviliges within the plugin. These admin priviliges are not the same as being operator on the server.
 

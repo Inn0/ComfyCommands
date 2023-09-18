@@ -39,3 +39,6 @@ commands:
   clearperms:
     description: Clears all of a user's permissions (revokes permission for every ComfyCommands command).
     usage: /clearperms <userName>
+  ec:
+    description: Opens a player's enderchest.
+    usage: /ec

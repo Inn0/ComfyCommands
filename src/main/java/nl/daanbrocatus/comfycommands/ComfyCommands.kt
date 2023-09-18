@@ -23,6 +23,7 @@ class ComfyCommands : JavaPlugin() {
         getCommand(CommandNames().AFK)?.setExecutor(AFK())
         getCommand(CommandNames().SLEEP)?.setExecutor(Sleep())
         getCommand(CommandNames().ANNOUNCE)?.setExecutor(Announce())
+        getCommand(CommandNames().ENDERCHEST)?.setExecutor(Enderchest())
 
         // Coordinates command executors
         getCommand(CommandNames().SAVECOORDS)?.setExecutor(SaveCoords())
