@@ -9,6 +9,6 @@ data class CoordItem(
         val z: Int
 ) {
     override fun toString(): String {
-        return "${ChatColor.BOLD}$name: ${ChatColor.RESET}x: $x, y: $y, z: $y"
+        return "${ChatColor.BOLD}$name: ${ChatColor.RESET}x: $x, y: $y, z: $z"
     }
 }
