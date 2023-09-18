@@ -9,7 +9,7 @@ import kotlin.math.roundToInt
 
 class CoordUtil {
     private val gson = Gson()
-    private val directoryPrefix = "coords/"
+    private val directoryPrefix = "comfycommands/coords/"
     private val fileExtension = ".json"
 
     fun readCoordinates(playerName: String): MutableList<CoordItem>? {
