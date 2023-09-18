@@ -30,9 +30,10 @@ class AFK: CommandExecutor {
             afkPlayers.add(playerName)
             sender.isInvulnerable = true
             sender.walkSpeed = 0.0f
+            sender.isSneaking = false
             sender.addPotionEffect(PotionEffect(PotionEffectType.JUMP, Int.MAX_VALUE, 128, false, false))
             sender.setDisplayName(ChatColor.YELLOW.toString() + sender.name)
-            sender.setPlayerListName(ChatColor.YELLOW.toString() + sender.name)
+            sender.setPlayerListName(ChatColor.YELLOW.toString() + sender.playerListName)
             Bukkit.broadcastMessage("${ChatColor.GREEN}$ $playerName is now AFK!")
         } else {
             afkPlayers.remove(playerName)
@@ -40,7 +41,7 @@ class AFK: CommandExecutor {
             sender.walkSpeed = 0.2f
             sender.removePotionEffect(PotionEffectType.JUMP)
             sender.setDisplayName(sender.name)
-            sender.setPlayerListName(sender.name)
+            sender.setPlayerListName(sender.playerListName.substring(2))
             Bukkit.broadcastMessage("${ChatColor.GREEN}$ $playerName is no longer AFK!")
         }
 

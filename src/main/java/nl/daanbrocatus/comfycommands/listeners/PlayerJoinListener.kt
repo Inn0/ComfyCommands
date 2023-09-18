@@ -40,7 +40,12 @@ class PlayerJoinListener: Listener {
             World.Environment.THE_END -> coordColor = ChatColor.DARK_PURPLE
             else -> coordColor = ChatColor.DARK_GREEN
         }
-        val displayNameWithCoords = "${player.name} $coordColor(${player.location.x.roundToInt()}, ${player.location.y.roundToInt()}, ${player.location.z.roundToInt()})"
-        player.setPlayerListName(displayNameWithCoords)
+
+        val coordsString = " $coordColor(${player.location.x.roundToInt()}, ${player.location.y.roundToInt()}, ${player.location.z.roundToInt()})"
+        if(player.playerListName.length > coordsString.length) {
+            player.setPlayerListName(player.playerListName.substring(0, player.playerListName.length - coordsString.length))
+        }
+
+        player.setPlayerListName(player.playerListName.plus(coordsString))
     }
 }

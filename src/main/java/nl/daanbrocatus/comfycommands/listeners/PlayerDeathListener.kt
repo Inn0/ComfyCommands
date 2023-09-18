@@ -22,6 +22,6 @@ class PlayerDeathListener : Listener {
             else -> world = "Overworld"
         }
 
-        Bukkit.broadcastMessage("${ChatColor.LIGHT_PURPLE}$ ${event.player.name} died at ${ChatColor.BOLD}x: $x, y: $y, z: $z${ChatColor.RESET}${ChatColor.LIGHT_PURPLE}! ($world)")
+        Bukkit.broadcastMessage("${ChatColor.LIGHT_PURPLE}$ ${event.player.name} died at ${ChatColor.BOLD}x: $x, y: $y, z: $z${ChatColor.RESET}${ChatColor.LIGHT_PURPLE}! ($world). What a noob!")
     }
 }
