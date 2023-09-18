@@ -1,5 +1,7 @@
 package nl.daanbrocatus.comfycommands.commands
 
+import nl.daanbrocatus.comfycommands.constants.CommandNames
+import nl.daanbrocatus.comfycommands.utils.GoodMorningMessageUtil
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.World
@@ -9,9 +11,12 @@ import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 
 class Sleep : CommandExecutor {
+    private val goodMorningMessageUtil = GoodMorningMessageUtil()
+    private val commandName = CommandNames().SLEEP
+    private val commandHelper = CommandHelper()
+
     override fun onCommand(sender: CommandSender, command: Command, p2: String, args: Array<out String>?): Boolean {
-        if(sender !is Player) {
-            sender.sendMessage("${ChatColor.RED}$ You are not a player!")
+        if(!commandHelper.doesPlayerHavePermission(sender, commandName)) {
             return false
         }
 
@@ -20,7 +25,7 @@ class Sleep : CommandExecutor {
             world.time = 0
             world.setStorm(false)
             world.isThundering = false
-            Bukkit.broadcastMessage("${ChatColor.GREEN}$ Good morning gamers!")
+            Bukkit.broadcastMessage("${ChatColor.GREEN}$ ${goodMorningMessageUtil.getRandomMessage()}")
             return true
         }
         return false

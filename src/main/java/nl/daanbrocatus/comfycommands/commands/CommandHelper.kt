@@ -1,9 +1,26 @@
 package nl.daanbrocatus.comfycommands.commands
 
-class CommandHelper {
-    private val admins: List<String> = listOf("21_Cabbage_420")
+import nl.daanbrocatus.comfycommands.utils.PermissionsUtil
+import org.bukkit.ChatColor
+import org.bukkit.command.CommandSender
+import org.bukkit.entity.Player
 
-    fun isPlayerAdmin(playerName: String): Boolean {
-        return admins.contains(playerName)
+class CommandHelper {
+    private val permissionsUtil = PermissionsUtil()
+
+    fun doesPlayerHavePermission(sender: CommandSender, permission: String): Boolean {
+        return if(!permissionsUtil.hasPermission(sender.name, permission)) {
+            sender.sendMessage("${ChatColor.RED}$ You do not have permission to use this command!")
+            false
+        } else {
+            isSenderPlayer(sender)
+        }
+    }
+
+    private fun isSenderPlayer(sender: CommandSender): Boolean {
+        return if(sender !is Player) {
+            sender.sendMessage("${ChatColor.RED}$ Sender needs to be a player!")
+            false
+        } else true
     }
 }

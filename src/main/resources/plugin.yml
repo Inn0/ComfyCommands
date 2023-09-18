@@ -6,9 +6,6 @@ commands:
   heal:
     description: Heals a player to full health.
     usage: /heal
-  coords:
-    description: Fetch the coordinates of a player by name.
-    usage: /coords <username>
   afk:
     description: Go AFK and become invincible. AFK players have a yellow name.
     usage: /afk
@@ -23,10 +20,22 @@ commands:
     usage: /savecoords <name>
   listcoords:
     description: Lists all the coordinates the player has saved. You can provide a username as an argument to get someone else's list.
-    usage: /listcoords <username?>
+    usage: /listcoords <userName?>
   deletecoords:
     description: Deletes a set of coordinates.
     usage: /deletecoords <name>
   clearcoords:
     description: Clears all saved coordinates.
     usage: /clearcoords
+  giveperms:
+    description: Give a user permission to use a command.
+    usage: /giveperms <userName> <commandName>
+  listperms:
+    description: Lists all permissions for the current user. You can provide a username as an argument to get someone else's permissions.
+    usage: /listperms <userName?>
+  revokeperms:
+    description: Revokes a user's permission to use a command.
+    usage: /revokeperms <userName> <commandName>
+  clearperms:
+    description: Clears all of a user's permissions (revokes permission for every ComfyCommands command).
+    usage: /clearperms <userName>

@@ -1,5 +1,7 @@
 package nl.daanbrocatus.comfycommands.commands.coords
 
+import nl.daanbrocatus.comfycommands.commands.CommandHelper
+import nl.daanbrocatus.comfycommands.constants.CommandNames
 import nl.daanbrocatus.comfycommands.utils.CoordUtil
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
@@ -10,10 +12,15 @@ import org.bukkit.entity.Player
 
 class SaveCoords : CommandExecutor {
     private val coordUtil = CoordUtil()
+    private val commandName = CommandNames().SAVECOORDS
+    private val commandHelper = CommandHelper()
 
     override fun onCommand(sender: CommandSender, command: Command, p2: String, args: Array<out String>?): Boolean {
         if(sender !is Player) {
-            sender.sendMessage("${ChatColor.RED}$ Sender needs to be a player!")
+            return false
+        }
+
+        if(!commandHelper.doesPlayerHavePermission(sender, commandName)) {
             return false
         }
 
