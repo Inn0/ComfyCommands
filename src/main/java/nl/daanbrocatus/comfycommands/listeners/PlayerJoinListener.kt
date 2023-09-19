@@ -14,7 +14,6 @@ import kotlin.math.roundToInt
 
 class PlayerJoinListener: Listener {
     private val permissionsUtil = PermissionsUtil()
-    private val afkHelper = AfkHelper
 
     @EventHandler
     fun onPlayerJoin(event: PlayerJoinEvent) {
@@ -46,10 +45,7 @@ class PlayerJoinListener: Listener {
         val cleanPlayerDisplayName = removeParentheses(player.displayName)
         val newPlayerDisplayName = cleanPlayerDisplayName.plus(coordsString)
 
-        println(afkHelper.isAfk(player.name))
-
         player.setPlayerListName(newPlayerDisplayName)
-        println("PlayerListDisplayName: ${player.playerListName}")
     }
 
     private fun removeParentheses(input: String): String {

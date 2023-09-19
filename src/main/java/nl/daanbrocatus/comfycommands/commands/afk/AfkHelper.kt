@@ -8,12 +8,10 @@ object AfkHelper {
     }
 
     fun toggleAfk(playerName: String) {
-        println("Before toggling afk status: $afkPlayers")
         if (!isAfk(playerName)) {
             afkPlayers.add(playerName)
         } else {
             afkPlayers.remove(playerName)
         }
-        println("After toggling afk status: $afkPlayers")
     }
 }
