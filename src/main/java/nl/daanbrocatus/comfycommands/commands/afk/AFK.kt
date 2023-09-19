@@ -1,5 +1,6 @@
-package nl.daanbrocatus.comfycommands.commands
+package nl.daanbrocatus.comfycommands.commands.afk
 
+import nl.daanbrocatus.comfycommands.commands.CommandHelper
 import nl.daanbrocatus.comfycommands.constants.CommandNames
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
@@ -11,7 +12,7 @@ import org.bukkit.potion.PotionEffect
 import org.bukkit.potion.PotionEffectType
 
 class AFK: CommandExecutor {
-    private var afkPlayers: MutableList<String> = mutableListOf()
+    private val afkHelper = AfkHelper
     private val commandHelper = CommandHelper()
     private val commandName = CommandNames().AFK
 
@@ -26,8 +27,7 @@ class AFK: CommandExecutor {
 
         val playerName = sender.name
 
-        if(!afkPlayers.contains(playerName)) {
-            afkPlayers.add(playerName)
+        if(!afkHelper.isAfk(playerName)) {
             sender.isInvulnerable = true
             sender.walkSpeed = 0.0f
             sender.isSneaking = false
@@ -36,7 +36,6 @@ class AFK: CommandExecutor {
             sender.setPlayerListName(ChatColor.YELLOW.toString() + sender.playerListName)
             Bukkit.broadcastMessage("${ChatColor.GREEN}$ $playerName is now AFK!")
         } else {
-            afkPlayers.remove(playerName)
             sender.isInvulnerable = false
             sender.walkSpeed = 0.2f
             sender.removePotionEffect(PotionEffectType.JUMP)
@@ -44,6 +43,7 @@ class AFK: CommandExecutor {
             sender.setPlayerListName(sender.playerListName.substring(2))
             Bukkit.broadcastMessage("${ChatColor.GREEN}$ $playerName is no longer AFK!")
         }
+        afkHelper.toggleAfk(playerName)
 
         return true
     }

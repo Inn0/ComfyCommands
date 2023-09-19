@@ -1,8 +1,8 @@
 package nl.daanbrocatus.comfycommands.listeners
 
 import nl.daanbrocatus.comfycommands.ComfyCommands
+import nl.daanbrocatus.comfycommands.commands.afk.AfkHelper
 import nl.daanbrocatus.comfycommands.utils.PermissionsUtil
-import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.World
 import org.bukkit.entity.Player
@@ -14,6 +14,7 @@ import kotlin.math.roundToInt
 
 class PlayerJoinListener: Listener {
     private val permissionsUtil = PermissionsUtil()
+    private val afkHelper = AfkHelper
 
     @EventHandler
     fun onPlayerJoin(event: PlayerJoinEvent) {
@@ -43,11 +44,12 @@ class PlayerJoinListener: Listener {
 
         val coordsString = " $coordColor(${player.location.x.roundToInt()}, ${player.location.y.roundToInt()}, ${player.location.z.roundToInt()})"
         val cleanPlayerDisplayName = removeParentheses(player.displayName)
-        println("Cleaned display name: $cleanPlayerDisplayName")
         val newPlayerDisplayName = cleanPlayerDisplayName.plus(coordsString)
-        println("Displayname with coords: $newPlayerDisplayName")
+
+        println(afkHelper.isAfk(player.name))
 
         player.setPlayerListName(newPlayerDisplayName)
+        println("PlayerListDisplayName: ${player.playerListName}")
     }
 
     private fun removeParentheses(input: String): String {

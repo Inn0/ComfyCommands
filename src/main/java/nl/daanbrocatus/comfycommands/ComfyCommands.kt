@@ -3,6 +3,7 @@ package nl.daanbrocatus.comfycommands
 import nl.daanbrocatus.comfycommands.commands.*
 import nl.daanbrocatus.comfycommands.commands.GMMessages.AddGMMsg
 import nl.daanbrocatus.comfycommands.commands.GMMessages.RemoveGMMsg
+import nl.daanbrocatus.comfycommands.commands.afk.AFK
 import nl.daanbrocatus.comfycommands.commands.coords.*
 import nl.daanbrocatus.comfycommands.commands.perms.ClearPerms
 import nl.daanbrocatus.comfycommands.commands.perms.GivePerms
