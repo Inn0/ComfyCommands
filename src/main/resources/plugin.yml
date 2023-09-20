@@ -48,3 +48,6 @@ commands:
   removegmmsg:
     description: Removes a message from the randomly selected message that is echoed after using /sleep.
     usage: /removegmmsg <message>
+  afklist:
+    description: Lists all the afk players.
+    usage: /afklist

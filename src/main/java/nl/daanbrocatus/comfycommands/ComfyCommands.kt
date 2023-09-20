@@ -4,6 +4,7 @@ import nl.daanbrocatus.comfycommands.commands.*
 import nl.daanbrocatus.comfycommands.commands.GMMessages.AddGMMsg
 import nl.daanbrocatus.comfycommands.commands.GMMessages.RemoveGMMsg
 import nl.daanbrocatus.comfycommands.commands.afk.AFK
+import nl.daanbrocatus.comfycommands.commands.afk.AFKList
 import nl.daanbrocatus.comfycommands.commands.coords.*
 import nl.daanbrocatus.comfycommands.commands.perms.ClearPerms
 import nl.daanbrocatus.comfycommands.commands.perms.GivePerms
@@ -12,6 +13,7 @@ import nl.daanbrocatus.comfycommands.commands.perms.RevokePerms
 import nl.daanbrocatus.comfycommands.constants.CommandNames
 import nl.daanbrocatus.comfycommands.listeners.PlayerDeathListener
 import nl.daanbrocatus.comfycommands.listeners.PlayerJoinListener
+import nl.daanbrocatus.comfycommands.listeners.PlayerLeaveListener
 import org.bukkit.plugin.java.JavaPlugin
 
 class ComfyCommands : JavaPlugin() {
@@ -23,10 +25,13 @@ class ComfyCommands : JavaPlugin() {
         instance = this
 
         getCommand(CommandNames().HEAL)?.setExecutor(Heal())
-        getCommand(CommandNames().AFK)?.setExecutor(AFK())
         getCommand(CommandNames().SLEEP)?.setExecutor(Sleep())
         getCommand(CommandNames().ANNOUNCE)?.setExecutor(Announce())
         getCommand(CommandNames().ENDERCHEST)?.setExecutor(Enderchest())
+
+        // AFK Commands
+        getCommand(CommandNames().AFK)?.setExecutor(AFK())
+        getCommand(CommandNames().AFKLIST)?.setExecutor(AFKList())
 
         // Coordinates command executors
         getCommand(CommandNames().SAVECOORDS)?.setExecutor(SaveCoords())
@@ -47,6 +52,7 @@ class ComfyCommands : JavaPlugin() {
         // Event listeners
         server.pluginManager.registerEvents(PlayerDeathListener(), this)
         server.pluginManager.registerEvents(PlayerJoinListener(), this)
+        server.pluginManager.registerEvents(PlayerLeaveListener(), this)
     }
 
     override fun onDisable() {
