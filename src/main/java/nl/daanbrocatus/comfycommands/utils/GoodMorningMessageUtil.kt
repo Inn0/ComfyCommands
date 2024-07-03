@@ -6,9 +6,12 @@ import java.io.File
 import java.util.*
 
 class GoodMorningMessageUtil {
-    private val fileLocation: String = "comfycommands/strings/goodmorningmessages.json"
-    private val file = File(fileLocation)
+    private val filePrefix = "comfycommands/"
+    private val fileLocation: String = "strings/goodmorningmessages"
+    private val fileExtension = ".json"
+    private val file = File(filePrefix + fileLocation + fileExtension)
     private val gson = Gson()
+    private val fileUtil = FileUtil()
 
     fun getRandomMessage(): String {
         val strings = readMessages()
@@ -23,6 +26,7 @@ class GoodMorningMessageUtil {
     }
 
     fun addMessage(string: String) {
+        fileUtil.createFileIfDoesNotExist(fileLocation, "[]")
         var msgList = readMessages().toMutableList()
         msgList.add(string)
         file.writeText(gson.toJson(msgList))
@@ -37,6 +41,7 @@ class GoodMorningMessageUtil {
     }
 
     private fun readMessages(): List<String> {
+        fileUtil.createFileIfDoesNotExist(fileLocation, "[]")
         val json = file.readText()
         val type = object : TypeToken<List<String>>() {}.type
         return gson.fromJson(json, type)

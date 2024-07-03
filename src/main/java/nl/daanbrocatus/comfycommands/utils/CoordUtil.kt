@@ -2,6 +2,7 @@ package nl.daanbrocatus.comfycommands.utils
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import nl.daanbrocatus.comfycommands.constants.FileConstants
 import nl.daanbrocatus.comfycommands.models.CoordItem
 import org.bukkit.Location
 import java.io.File
@@ -9,18 +10,17 @@ import kotlin.math.roundToInt
 
 class CoordUtil {
     private val gson = Gson()
-    private val directoryPrefix = "comfycommands/coords/"
-    private val fileExtension = ".json"
+    private val fileUtil = FileUtil()
 
     fun readCoordinates(playerName: String): MutableList<CoordItem>? {
-        val file = File(directoryPrefix + playerName + fileExtension)
+        val file = File(FileConstants().directoryPrefix + playerName + FileConstants().fileExtension)
         val type = object : TypeToken<List<CoordItem>>() {}.type
         val json = file.readText()
         return gson.fromJson(json, type)
     }
 
     fun saveCoordinates(playerName: String, coords: CoordItem) {
-        createFileIfDoesNotExist(playerName)
+        fileUtil.createFileIfDoesNotExist("coords/$playerName")
         var coordList = readCoordinates(playerName)
         if(coordList == null) {
             coordList = mutableListOf()
@@ -29,7 +29,7 @@ class CoordUtil {
             throw Exception("These coordinates are already saved!")
         } else {
             coordList.add(coords)
-            val file = File(directoryPrefix + playerName + fileExtension)
+            val file = File(FileConstants().directoryPrefix + playerName + FileConstants().fileExtension)
             file.writeText(gson.toJson(coordList))
         }
     }
@@ -39,12 +39,12 @@ class CoordUtil {
 
         coordList!!.removeIf { it.name == name }
 
-        val file = File(directoryPrefix + playerName + fileExtension)
+        val file = File(FileConstants().directoryPrefix + playerName + FileConstants().fileExtension)
         file.writeText(gson.toJson(coordList))
     }
 
     fun clearCoordinates(playerName: String) {
-        val file = File(directoryPrefix + playerName + fileExtension)
+        val file = File(FileConstants().directoryPrefix + playerName + FileConstants().fileExtension)
         file.writeText("[]")
     }
 
@@ -54,17 +54,5 @@ class CoordUtil {
         val z = location.z.roundToInt()
 
         return CoordItem(coordsName, x, y, z)
-    }
-
-    private fun createFileIfDoesNotExist(fileName: String) {
-        val file = File(directoryPrefix + fileName + fileExtension)
-        if (!file.exists()) {
-            try {
-                file.parentFile.mkdirs()
-                file.createNewFile()
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }
     }
 }
