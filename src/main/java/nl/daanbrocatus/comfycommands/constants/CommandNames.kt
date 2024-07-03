@@ -16,5 +16,6 @@ data class CommandNames(
         val ENDERCHEST: String = "ec",
         val ADDGMMSG: String = "addgmmsg",
         val REMOVEGMMSG: String = "removegmmsg",
-        val AFKLIST: String = "afklist"
+        val AFKLIST: String = "afklist",
+        val SPECTATOR: String = "spec"
 )

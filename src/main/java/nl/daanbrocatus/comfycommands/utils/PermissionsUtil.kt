@@ -16,7 +16,8 @@ class PermissionsUtil {
             CommandNames().SAVECOORDS,
             CommandNames().DELETECOORDS,
             CommandNames().CLEARCOORDS,
-            CommandNames().LISTPERMS
+            CommandNames().LISTPERMS,
+            CommandNames().SPECTATOR
     )
 
     fun hasPermission(playerName: String, permission: String): Boolean {

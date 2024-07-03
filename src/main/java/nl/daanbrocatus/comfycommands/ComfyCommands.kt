@@ -28,6 +28,7 @@ class ComfyCommands : JavaPlugin() {
         getCommand(CommandNames().SLEEP)?.setExecutor(Sleep())
         getCommand(CommandNames().ANNOUNCE)?.setExecutor(Announce())
         getCommand(CommandNames().ENDERCHEST)?.setExecutor(Enderchest())
+        getCommand(CommandNames().SPECTATOR)?.setExecutor(ToggleSpectatorMode())
 
         // AFK Commands
         getCommand(CommandNames().AFK)?.setExecutor(AFK())

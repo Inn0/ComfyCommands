@@ -51,3 +51,6 @@ commands:
   afklist:
     description: Lists all the afk players.
     usage: /afklist
+  spec:
+    description: Toggles spectator gamemode.
+    usage: /spec
