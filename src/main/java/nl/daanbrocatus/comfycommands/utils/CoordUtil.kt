@@ -13,7 +13,7 @@ class CoordUtil {
     private val fileUtil = FileUtil()
 
     fun readCoordinates(playerName: String): MutableList<CoordItem>? {
-        val file = File(FileConstants().directoryPrefix + playerName + FileConstants().fileExtension)
+        val file = File(FileConstants().directoryPrefix + "coords/$playerName" + FileConstants().fileExtension)
         val type = object : TypeToken<List<CoordItem>>() {}.type
         val json = file.readText()
         return gson.fromJson(json, type)
@@ -29,7 +29,7 @@ class CoordUtil {
             throw Exception("These coordinates are already saved!")
         } else {
             coordList.add(coords)
-            val file = File(FileConstants().directoryPrefix + playerName + FileConstants().fileExtension)
+            val file = File(FileConstants().directoryPrefix + "coords/$playerName" + FileConstants().fileExtension)
             file.writeText(gson.toJson(coordList))
         }
     }
@@ -39,12 +39,12 @@ class CoordUtil {
 
         coordList!!.removeIf { it.name == name }
 
-        val file = File(FileConstants().directoryPrefix + playerName + FileConstants().fileExtension)
+        val file = File(FileConstants().directoryPrefix + "coords/$playerName" + FileConstants().fileExtension)
         file.writeText(gson.toJson(coordList))
     }
 
     fun clearCoordinates(playerName: String) {
-        val file = File(FileConstants().directoryPrefix + playerName + FileConstants().fileExtension)
+        val file = File(FileConstants().directoryPrefix + "coords/$playerName" + FileConstants().fileExtension)
         file.writeText("[]")
     }
 
