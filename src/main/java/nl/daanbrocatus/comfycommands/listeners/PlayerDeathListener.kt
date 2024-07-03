@@ -11,17 +11,17 @@ import kotlin.math.roundToInt
 class PlayerDeathListener : Listener {
     @EventHandler
     fun onPlayerDeath(event: PlayerDeathEvent) {
-        val x = event.player.location.x.roundToInt()
-        val y = event.player.location.y.roundToInt()
-        val z = event.player.location.z.roundToInt()
+        val x = event.entity.player?.location?.x?.roundToInt()
+        val y = event.entity.player?.location?.y?.roundToInt()
+        val z = event.entity.player?.location?.z?.roundToInt()
         var world = ""
 
-        when (event.player.world.environment) {
+        when (event.entity.player?.world?.environment) {
             World.Environment.THE_END -> world = "End"
             World.Environment.NETHER -> world = "Nether"
             else -> world = "Overworld"
         }
 
-        Bukkit.broadcastMessage("${ChatColor.LIGHT_PURPLE}$ ${event.player.name} died at ${ChatColor.BOLD}x: $x, y: $y, z: $z${ChatColor.RESET}${ChatColor.LIGHT_PURPLE}! ($world). What a noob!")
+        Bukkit.broadcastMessage("${ChatColor.LIGHT_PURPLE}$ ${event.entity.player?.name} died at ${ChatColor.BOLD}x: $x, y: $y, z: $z${ChatColor.RESET}${ChatColor.LIGHT_PURPLE}! ($world). What a noob!")
     }
 }
