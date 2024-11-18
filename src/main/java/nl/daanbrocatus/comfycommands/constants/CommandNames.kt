@@ -17,5 +17,6 @@ data class CommandNames(
         val ADDGMMSG: String = "addgmmsg",
         val REMOVEGMMSG: String = "removegmmsg",
         val AFKLIST: String = "afklist",
-        val SPECTATOR: String = "spec"
+        val SPECTATOR: String = "spec",
+        val SEEINVENTORY: String = "inv"
 )

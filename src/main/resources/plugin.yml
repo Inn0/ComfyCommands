@@ -54,3 +54,6 @@ commands:
   spec:
     description: Toggles spectator gamemode.
     usage: /spec
+  inv:
+    description: Inspects a players' inventory.
+    usage: /inv <playerName>

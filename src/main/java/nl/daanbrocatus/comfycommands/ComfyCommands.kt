@@ -34,6 +34,9 @@ class ComfyCommands : JavaPlugin() {
         getCommand(CommandNames().AFK)?.setExecutor(AFK())
         getCommand(CommandNames().AFKLIST)?.setExecutor(AFKList())
 
+        // See inventory
+        getCommand(CommandNames().SEEINVENTORY)?.setExecutor(SeeInventory())
+
         // Coordinates command executors
         getCommand(CommandNames().SAVECOORDS)?.setExecutor(SaveCoords())
         getCommand(CommandNames().LISTCOORDS)?.setExecutor(ListCoords())
