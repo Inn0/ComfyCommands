@@ -25,7 +25,7 @@ The following commands can be issued via the chat interface. You need permission
 | /addgmmsg     | Message: String               | Adds a message to the randomly selected message that is echoed after using /sleep.                                                                  | no                 | /addgmmsg good morning!                   |
 | /removegmmsg  | Message: String               | Removes a message from the randomly selected message that is echoed after using /sleep.                                                             | no                 | /removegmmsg good morning!                |
 | /spec         |                               | Toggles between `spectator` and `survival` gamemodes.                                                                                               | yes                | /spec                                     |
-| /inv          | Name: String                  | Opens a players' inventory.                                                                                                                         | no                 | /inv samoht22                             |
+| /inv          | Name: String                  | Opens a players' inventory.                                                                                                                         | no                 | /inv samoht2                              |
 
 Having operator priviliges on a Minecraft server does not equal having permission to use all the ComfyCommands commands. Permission needs to be granted seperately, using the ```/giveperms <userName> <commandName>```.
 
