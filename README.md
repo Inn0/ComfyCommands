@@ -1,6 +1,6 @@
 # ComfyCommands
 ## About
-This project is a [Minecraft](https://www.minecraft.net/en-us) plugin for [Paper](https://papermc.io/) servers, made for Minecraft version 1.20.1. Build the project artifact, and place the .jar archive in the ```/plugins``` directory of your Paper server to get started.
+This project is a [Minecraft](https://www.minecraft.net/en-us) plugin for [Paper](https://papermc.io/) servers, made for Minecraft version 1.21.3. Build the project artifact, and place the .jar archive in the ```/plugins``` directory of your Paper server to get started.
 This project is made with [Kotlin](https://kotlinlang.org/) and [Maven](https://maven.apache.org/). This project was made for casual multiplayer servers and aims to provide a few quality-of-life commands without altering gameplay.
 
 ## Commands
